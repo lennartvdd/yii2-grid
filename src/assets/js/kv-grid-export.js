@@ -350,7 +350,7 @@
             var tmpColDelim = String.fromCharCode(11), // vertical tab character
                 tmpRowDelim = String.fromCharCode(0); // null character
             // actual delimiter characters for CSV format
-            var colD = '"' + self.config.colDelimiter + '"', rowD = '"' + self.config.rowDelimiter + '"';
+            var colD = self.config.colDelimiter, rowD = self.config.rowDelimiter;
             // grab text from table into CSV formatted string
             var txt = '"' + $rows.map(function (i, row) {
                 var $row = $(row), $cols = $row.find(self.columns);
