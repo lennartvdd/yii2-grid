@@ -352,7 +352,7 @@
             // actual delimiter characters for CSV format
             var colD = self.config.colDelimiter, rowD = self.config.rowDelimiter;
             // grab text from table into CSV formatted string
-            var txt = '"' + $rows.map(function (i, row) {
+            var txt = $rows.map(function (i, row) {
                 var $row = $(row), $cols = $row.find(self.columns);
                 return $cols.map(function (j, col) {
                     var $col = $(col), text = $col.text().trim();
@@ -360,7 +360,7 @@
                 }).get().join(tmpColDelim);
             }).get().join(tmpRowDelim)
                 .split(tmpRowDelim).join(rowD)
-                .split(tmpColDelim).join(colD) + '"';
+                .split(tmpColDelim).join(colD);
             self.download(expType, txt);
         },
         exportJSON: function () {
